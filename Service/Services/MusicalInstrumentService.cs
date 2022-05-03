@@ -22,5 +22,20 @@ namespace Service
         {
             return await musicalInstrumentRepository.GetAll();
         }
+
+        public async Task Add(MusicalInstrument musicalInstrument)
+        {
+            await musicalInstrumentRepository.Add(musicalInstrument);
+        }
+
+        public Task Edit(MusicalInstrument musicalInstrument)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task Remove(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

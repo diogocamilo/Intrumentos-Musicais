@@ -19,7 +19,6 @@ namespace Api.App_Start
             Initialize(config, RegisterServices(new ContainerBuilder()));
         }
 
-
         public static void Initialize(HttpConfiguration config, IContainer container)
         {
             config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
@@ -27,13 +26,13 @@ namespace Api.App_Start
 
         private static IContainer RegisterServices(ContainerBuilder builder)
         {
-            //Register your Web API controllers.  
+            //Register Web API controllers.  
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 
-            // service
+            // services
             builder.RegisterType<MusicalInstrumentService>().As<IMusicalInstrumentService>();
 
-            // repository
+            // repositories
             builder.RegisterType<MusicalInstrumentRepository>().As<IMusicalInstrumentRepository>();
 
             //Set the dependency resolver to be Autofac.  
@@ -41,6 +40,5 @@ namespace Api.App_Start
 
             return Container;
         }
-
     }
 }
