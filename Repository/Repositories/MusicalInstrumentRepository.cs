@@ -1,5 +1,6 @@
 ﻿using Domain.Models;
 using Repository.Contracts;
+using Repository.Repositories.Daos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,14 +11,12 @@ namespace Repository.Repositories
 {
     public class MusicalInstrumentRepository : IMusicalInstrumentRepository
     {
-        private List<MusicalInstrument> instruments;
+        private readonly List<MusicalInstrument> instruments;
 
         public MusicalInstrumentRepository()
         {
-            this.instruments = new List<MusicalInstrument>();
-
-            this.instruments.Add(new MusicalInstrument() { Id = 1, Description = "Fender Stratocaster", Name = "Guitarra", Price = 4000 });
-            this.instruments.Add(new MusicalInstrument() { Id = 2, Description = "Fender Jazzmaster", Name = "Guitarra", Price = 5000 });
+            MusicalInstrumentDAO.Initialize();
+            instruments = MusicalInstrumentDAO.GetAll();
         }
 
         public async Task<List<MusicalInstrument>> GetAll()
@@ -27,7 +26,7 @@ namespace Repository.Repositories
 
         public async Task Add(MusicalInstrument musicalInstrument)
         {
-
+            instruments.Add(musicalInstrument);
         }
 
         public async Task Edit(MusicalInstrument musicalInstrument)
@@ -38,6 +37,11 @@ namespace Repository.Repositories
         public async Task Remove(int id)
         {
 
+        }
+
+        public Task<MusicalInstrument> GetId()
+        {
+            throw new NotImplementedException();
         }
     }
 }
