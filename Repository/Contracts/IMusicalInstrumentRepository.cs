@@ -10,9 +10,9 @@ namespace Repository.Contracts
     public interface IMusicalInstrumentRepository
     {
         Task<List<MusicalInstrument>> GetAll();
-        Task<MusicalInstrument> GetId();
+        Task<MusicalInstrument> GetById(Guid Id);
         Task Add(MusicalInstrument musicalInstrument);
         Task Edit(MusicalInstrument musicalInstrument);
-        Task Remove(int id);
+        Task Remove(Guid id);
     }
 }

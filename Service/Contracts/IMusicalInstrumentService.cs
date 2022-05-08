@@ -10,8 +10,9 @@ namespace Service.Contracts
     public interface IMusicalInstrumentService
     {
         Task<List<MusicalInstrument>> GetAll();
+        Task<MusicalInstrument> GetById(Guid Id);
         Task Add(MusicalInstrument musicalInstrument);
         Task Edit(MusicalInstrument musicalInstrument);
-        Task Remove(int id);
+        Task Remove(Guid id);
     }
 }

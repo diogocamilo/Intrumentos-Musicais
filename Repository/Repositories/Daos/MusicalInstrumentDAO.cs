@@ -23,6 +23,7 @@ namespace Repository.Repositories.Daos
 
                 instruments.Add(new MusicalInstrument()
                 {
+                    Id = Guid.NewGuid(),
                     Description = "Bateria Mapex Mars MA528SF GW Mapex",
                     Name = "Bateria Mapex Mars",
                     instrumentType = InstrumentType.Drums,
@@ -31,6 +32,7 @@ namespace Repository.Repositories.Daos
 
                 instruments.Add(new MusicalInstrument()
                 {
+                    Id = Guid.NewGuid(),
                     Description = "Violão Flat Cutaway Nylon Gnf-3 Ceq Ws Giannini - Marrom (Walnut Satin) (WS)",
                     Name = "Violão Flat Cutaway Nylon",
                     instrumentType = InstrumentType.Guitar,

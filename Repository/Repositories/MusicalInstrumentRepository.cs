@@ -31,17 +31,22 @@ namespace Repository.Repositories
 
         public async Task Edit(MusicalInstrument musicalInstrument)
         {
+            var index = instruments.FindIndex(m => m.Id == musicalInstrument.Id);
 
+            if (index > -1)
+            {
+                instruments[index] = musicalInstrument;
+            }
         }
 
-        public async Task Remove(int id)
+        public async Task Remove(Guid id)
         {
-
+            instruments.RemoveAll(instrument => instrument.Id == id);
         }
 
-        public Task<MusicalInstrument> GetId()
+        public async Task<MusicalInstrument> GetById(Guid Id)
         {
-            throw new NotImplementedException();
+            return instruments.Single(m => m.Id == Id);
         }
     }
 }
