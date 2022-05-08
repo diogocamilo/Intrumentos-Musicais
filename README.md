@@ -19,4 +19,3 @@ API Rest de Loja de Instrumentos Musicais.
 
 [Agogó](https://www.madeinbrazil.com.br/produto/agogo-duplo-grande-cromado-torelli-71748)
 
-#### Instrumentos mais vendidos
