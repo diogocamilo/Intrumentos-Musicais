@@ -45,5 +45,7 @@ Classe *MusicalInstrumentDAO* criada com intuito de regra para interação com o
 Depende de abstrações e não de implementações.
 Aplicamos o Design Pattern de Injeção de Dependência utilizando o framework Autofac.
 
-### Implementação do Autofac
-![image](https://user-images.githubusercontent.com/21026504/167326230-8a899a67-cd7f-48b1-b5f1-e4cf7b878e07.png)
+
+## Implementação AutoFac
+
+![image](assets/imagens/configuracao_autofac.png)
