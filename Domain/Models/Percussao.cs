@@ -1,10 +1,6 @@
 namespace Domain.Models
 {
-    public class Percussao : TipoInstrumento
+    public class Percussao : Instrumento
     {
-        public override string Selecionar(int valor, string nomeProduto)
-        {
-            return FormatarSelecao();
-        }
     }
 }

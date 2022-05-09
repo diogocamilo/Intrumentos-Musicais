@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace Domain.Models
 {
-    public class MusicalInstrument
+    public class Instrumento
     {
-        public MusicalInstrument()
+        public Instrumento()
         {
             Id = Guid.NewGuid();
         }
 
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string informations { get; set; }
-        public InstrumentType instrumentType { get; set; }
+        public InstrumentEnum instrumentType { get; set; }
     }
 }

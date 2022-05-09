@@ -1,6 +1,7 @@
 ﻿using Domain.Models;
 using Repository.Contracts;
 using Service.Contracts;
+using Service.Services.Validators;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,24 +19,33 @@ namespace Service
             this.musicalInstrumentRepository = musicalInstrumentRepository;
         }
 
-        public async Task<List<MusicalInstrument>> GetAll()
+        public async Task<List<Instrumento>> GetAll()
         {
             return await musicalInstrumentRepository.GetAll();
         }
 
-        public async Task Add(MusicalInstrument musicalInstrument)
+        public async Task Add(Instrumento musicalInstrument)
         {
+            var validator = new MusicalInstrumentValidator(musicalInstrument);
+         
             await musicalInstrumentRepository.Add(musicalInstrument);
         }
 
-        public Task Edit(MusicalInstrument musicalInstrument)
+        public async Task Remove(Guid id)
         {
-            throw new NotImplementedException();
+            await musicalInstrumentRepository.Remove(id);
         }
 
-        public Task Remove(int id)
+        public async Task Edit(Instrumento musicalInstrument)
         {
-            throw new NotImplementedException();
+            var validator = new MusicalInstrumentValidator(musicalInstrument);
+
+            await musicalInstrumentRepository.Edit(musicalInstrument);
+        }
+
+        public async Task<Instrumento> GetById(Guid Id)
+        {
+            return await musicalInstrumentRepository.GetById(Id);
         }
     }
 }

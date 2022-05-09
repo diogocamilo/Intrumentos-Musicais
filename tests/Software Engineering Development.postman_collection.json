@@ -1,0 +1,53 @@
+{
+	"info": {
+		"_postman_id": "097439a6-2b96-46d0-9562-523e922e0a90",
+		"name": "Software Engineering Development",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "InstrumentoMusical",
+			"item": [
+				{
+					"name": "Buscar Todos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{im}}find"
+					},
+					"response": []
+				},
+				{
+					"name": "Adicionar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Name\": \"Teclado Workstation Kross\",\r\n    \"Description\": \"Teclado Workstation Kross 2 61 Korg - Preto (BK)\",\r\n    \"informations\": \"Mais funções, mais sons, mais possibilidades! Uma plataforma de ponta com ainda mais funcionalidade. O sintetizador workstation que faz tudo. Uma rica seleção de mais de 1000 presets aprimorados. Memória de expansão PCM integrada de 128MB e bibliotecas opcionais suportadas. O rico e expressivo poder do mecanismo de som EDS-i e uma ampla seleção de efeitos com 134 tipos.\",\r\n    \"instrumentType\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{im}}add"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

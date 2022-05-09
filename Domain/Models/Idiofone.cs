@@ -1,10 +1,6 @@
 namespace Domain.Models
 {
-    public class Idiofone
+    public class Idiofone : Instrumento
     {
-        public override string Selecionar(int valor, string nomeProduto)
-        {
-            return FormatarSelecao();
-        }
     }
 }

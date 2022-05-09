@@ -11,7 +11,7 @@ namespace Repository.Repositories
 {
     public class MusicalInstrumentRepository : IMusicalInstrumentRepository
     {
-        private readonly List<MusicalInstrument> instruments;
+        private readonly List<Instrumento> instruments;
 
         public MusicalInstrumentRepository()
         {
@@ -19,29 +19,34 @@ namespace Repository.Repositories
             instruments = MusicalInstrumentDAO.GetAll();
         }
 
-        public async Task<List<MusicalInstrument>> GetAll()
+        public async Task<List<Instrumento>> GetAll()
         {
             return await Task.FromResult(instruments);
         }
 
-        public async Task Add(MusicalInstrument musicalInstrument)
+        public async Task Add(Instrumento musicalInstrument)
         {
             instruments.Add(musicalInstrument);
         }
 
-        public async Task Edit(MusicalInstrument musicalInstrument)
+        public async Task Edit(Instrumento musicalInstrument)
         {
+            var index = instruments.FindIndex(m => m.Id == musicalInstrument.Id);
 
+            if (index > -1)
+            {
+                instruments[index] = musicalInstrument;
+            }
         }
 
-        public async Task Remove(int id)
+        public async Task Remove(Guid id)
         {
-
+            instruments.RemoveAll(instrument => instrument.Id == id);
         }
 
-        public Task<MusicalInstrument> GetId()
+        public async Task<Instrumento> GetById(Guid Id)
         {
-            throw new NotImplementedException();
+            return instruments.Single(m => m.Id == Id);
         }
     }
 }

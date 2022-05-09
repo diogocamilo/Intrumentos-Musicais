@@ -1,10 +1,6 @@
 namespace Domain.Models
 {
-    public class Sopro
+    public class Sopro : Instrumento
     {
-        public override string Selecionar(int valor, string nomeProduto)
-        {
-            return FormatarSelecao();
-        }
     }
 }

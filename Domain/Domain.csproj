@@ -41,8 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enums\InstrumentType.cs" />
-    <Compile Include="Models\MusicalInstrument.cs" />
+    <Compile Include="Enums\InstrumentEnum.cs" />
+    <Compile Include="Models\Corda.cs" />
+    <Compile Include="Models\Idiofone.cs" />
+    <Compile Include="Models\Instrumento.cs" />
+    <Compile Include="Models\Percussao.cs" />
+    <Compile Include="Models\Sopro.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
