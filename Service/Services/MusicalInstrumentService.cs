@@ -19,12 +19,12 @@ namespace Service
             this.musicalInstrumentRepository = musicalInstrumentRepository;
         }
 
-        public async Task<List<MusicalInstrument>> GetAll()
+        public async Task<List<Instrumento>> GetAll()
         {
             return await musicalInstrumentRepository.GetAll();
         }
 
-        public async Task Add(MusicalInstrument musicalInstrument)
+        public async Task Add(Instrumento musicalInstrument)
         {
             var validator = new MusicalInstrumentValidator(musicalInstrument);
          
@@ -36,12 +36,14 @@ namespace Service
             await musicalInstrumentRepository.Remove(id);
         }
 
-        public async Task Edit(MusicalInstrument musicalInstrument)
+        public async Task Edit(Instrumento musicalInstrument)
         {
+            var validator = new MusicalInstrumentValidator(musicalInstrument);
+
             await musicalInstrumentRepository.Edit(musicalInstrument);
         }
 
-        public async Task<MusicalInstrument> GetById(Guid Id)
+        public async Task<Instrumento> GetById(Guid Id)
         {
             return await musicalInstrumentRepository.GetById(Id);
         }

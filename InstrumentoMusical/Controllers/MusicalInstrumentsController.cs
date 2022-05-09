@@ -25,7 +25,7 @@ namespace InstrumentoMusical.Controllers
         // GET api/instruments/find
         [HttpGet]
         [Route("")]
-        [SwaggerResponse((int)HttpStatusCode.OK, "Retorna lista de instrumentos", Type = typeof(List<MusicalInstrument>))]
+        [SwaggerResponse((int)HttpStatusCode.OK, "Retorna lista de instrumentos", Type = typeof(List<Instrumento>))]
         public async Task<IHttpActionResult> GetInstruments()
         {
             var instruments = await musicalInstrumentService.GetAll();
@@ -35,7 +35,7 @@ namespace InstrumentoMusical.Controllers
         // GET api/instruments/{id}
         [HttpGet]
         [Route("{id}")]
-        [SwaggerResponse((int)HttpStatusCode.OK, "Retorna instrumento de acordo com Id informado", Type = typeof(MusicalInstrument))]
+        [SwaggerResponse((int)HttpStatusCode.OK, "Retorna instrumento de acordo com Id informado", Type = typeof(Instrumento))]
         public async Task<IHttpActionResult> GetInstrumentById(Guid id)
         {
             var instrument = await musicalInstrumentService.GetById(id);
@@ -45,8 +45,8 @@ namespace InstrumentoMusical.Controllers
         // Post api/instruments/add
         [HttpPost]
         [Route("")]
-        [SwaggerResponse((int)HttpStatusCode.OK, "Adiciona item à lista de instrumentos", Type = typeof(MusicalInstrument))]
-        public async Task<IHttpActionResult> AddInstrument(MusicalInstrument musicalInstrument)
+        [SwaggerResponse((int)HttpStatusCode.OK, "Adiciona item à lista de instrumentos", Type = typeof(Instrumento))]
+        public async Task<IHttpActionResult> AddInstrument(Instrumento musicalInstrument)
         {
             await musicalInstrumentService.Add(musicalInstrument);
             
@@ -57,8 +57,8 @@ namespace InstrumentoMusical.Controllers
         // Post api/instruments/
         [HttpPut]
         [Route("")]
-        [SwaggerResponse((int)HttpStatusCode.OK, "Edita item da lista de instrumentos", Type = typeof(MusicalInstrument))]
-        public async Task<IHttpActionResult> EditInstrument(MusicalInstrument musicalInstrument)
+        [SwaggerResponse((int)HttpStatusCode.OK, "Edita item da lista de instrumentos", Type = typeof(Instrumento))]
+        public async Task<IHttpActionResult> EditInstrument(Instrumento musicalInstrument)
         {
             await musicalInstrumentService.Edit(musicalInstrument);
 

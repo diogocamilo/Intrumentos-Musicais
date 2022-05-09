@@ -12,7 +12,7 @@ namespace Service.Services.Validators
     {
         private ValidationResult validationResult;
 
-        public MusicalInstrumentValidator(MusicalInstrument candidate)
+        public MusicalInstrumentValidator(Instrumento candidate)
         {
             var validatorResult = Validate(candidate);
 
@@ -22,7 +22,7 @@ namespace Service.Services.Validators
             }
         }
 
-        private ValidationResult Validate(MusicalInstrument candidate)
+        private ValidationResult Validate(Instrumento candidate)
         {
             validationResult = new ValidationResult();
 
@@ -38,7 +38,7 @@ namespace Service.Services.Validators
             {
                 validationResult.AddReason("Descrição do instrumento musical não informada.");
             }
-            if (Enum.IsDefined(typeof(InstrumentType), candidate.instrumentType) == false)
+            if (Enum.IsDefined(typeof(InstrumentEnum), candidate.instrumentType) == false)
             {
                 validationResult.AddReason("Tipo de instrumento musical informado não disponível.");
             }
