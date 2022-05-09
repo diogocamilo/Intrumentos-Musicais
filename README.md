@@ -1,4 +1,4 @@
-# Intrumentos Musicais
+# Instrumentos Musicais
 API Rest de Loja de Instrumentos Musicais.
 
 ## Tipos de Instrumentos Musicais
@@ -44,3 +44,6 @@ Princípio da Inversão de Dependência — Dependa de abstrações e não de i
 Classe *MusicalInstrumentDAO* criada com intuito de regra para interação com o BD abstraindo qual vier a ser utilizado. Podemos criar uma interface com assinatura do método de conexão com BD e se caso viermos utilizar MySQL criamos uma classe que implementa a interface e assim criamos métodos específicos para conexão com este BD. Assim no nosso método de Initialize da classe *MusicalInstrumentDAO* podemos enviar um objeto do tipo da interface de conexão para na sequência realizarmos de forma HARD-CODE no código exemplos de instrumentos musicais. Se amanhã decidirmos utilizar outro BD (Oracle) basta criarmos uma nova classe implementando a interface de conexão não alterando nada nas demais interfaces e classes.
 Depende de abstrações e não de implementações.
 Aplicamos o Design Pattern de Injeção de Dependência utilizando o framework Autofac.
+
+### Implementação do Autofac
+![image](https://user-images.githubusercontent.com/21026504/167326230-8a899a67-cd7f-48b1-b5f1-e4cf7b878e07.png)
