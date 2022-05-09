@@ -1,6 +1,8 @@
 # Instrumentos Musicais
 API Rest de Loja de Instrumentos Musicais.
 
+![image](assets/imagens/pastas_solucao.png)
+
 ## Tipos de Instrumentos Musicais
 
 
@@ -33,6 +35,11 @@ Com a criação da interface IMusicalInstrumentRepository para assinatura de mé
 Princípio da substituição de Liskov — Uma classe derivada deve ser substituível por sua classe base.
 Pelo princípio LSP, a instância de uma classe base deve possibilitar sua substituição por instâncias das classes derivadas sem que se necessita qualquer alteração no código.
 Criamos as classes Corda, Percussão, Idiofone e Sopro; que representam categorias de instrumentos musicais. Ambas herdam da classe InstrumentoMusical e possuem as mesmas propriedades.
+
+![image](assets/imagens/classe_corda.PNG)
+![image](assets/imagens/classe_percussao.PNG)
+![image](assets/imagens/classe_sopro.PNG)
+![image](assets/imagens/classe_idiofone.PNG)
 
 ## 4. ISP — Interface Segregation Principle:
 Princípio da Segregação da Interface — Uma classe não deve ser forçada a implementar interfaces e métodos que não irão utilizar.
