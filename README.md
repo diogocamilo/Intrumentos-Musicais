@@ -4,12 +4,12 @@ API Rest de Loja de Instrumentos Musicais.
 # Projeto Software Engineering Development - Professor: Rafael Matsuyama
 Foi decidido pela maioria que o projeto seria desenvolvido em .NET, pois há mais programadores entre os integrantes do grupo que conhecem a plataforma da Microsoft.
 
-# Integrantes
+## Integrantes
 
-## RM 341621 Bianca Paulino
-## RM 337095 Thiago Holanda
-## RM 340457 Diogo Camilo
-## RM 342168 Bruno Santos
+### RM 341621 Bianca Paulino
+### RM 337095 Thiago Holanda
+### RM 340457 Diogo Camilo
+### RM 342168 Bruno Santos
 
 ## Tipos de Instrumentos Musicais
 
