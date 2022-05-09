@@ -1,10 +1,7 @@
 # Instrumentos Musicais
 API Rest de Loja de Instrumentos Musicais.
 
-![image](assets/imagens/pastas_solucao.png)
-
 ## Tipos de Instrumentos Musicais
-
 
 1. Cordas: *Instrumentos de cordas são: Guitarra, Violão, Contra-Baixo, Violino, etc.*
 2. Percussão: *Instrumentos de Percussão são: Bateria, Pandeiro, Bongo, Tamborim, etc.*
@@ -13,13 +10,13 @@ API Rest de Loja de Instrumentos Musicais.
 
 ### Imagens de Guitarra, Bateria, Flauta e Agogó.
 
-[Guitarra](https://pt.wikipedia.org/wiki/Guitarra)
+### [Guitarra](https://pt.wikipedia.org/wiki/Guitarra)
 
-[Bateria](https://www.madeinbrazil.com.br/produto/bateria-completa-action-sp525-bk-turbo-preto-bk-71428)
+### [Bateria](https://www.madeinbrazil.com.br/produto/bateria-completa-action-sp525-bk-turbo-preto-bk-71428)
 
-[Flauta](https://pt.wikipedia.org/wiki/Flauta)
+### [Flauta](https://pt.wikipedia.org/wiki/Flauta)
 
-[Agogó](https://en.wikipedia.org/wiki/Agog%C3%B4)
+### [Agogó](https://en.wikipedia.org/wiki/Agog%C3%B4)
 
 # Ánalise de Pricípios SOLID no código
 
@@ -28,7 +25,6 @@ Princípio da Responsabilidade Única — Uma classe deve ter um, e somente um,
 Classe *MusicalInstrument* foi criada com único intuito de tratar exibição e manipulação de informações a respeito de um instrumento musical. Criamos também as classes para escopo de serviço para orquestração com a controller e o repositório para persistência de dados.
 
 ## 2. OCP — Open-Closed Principle:​
-
 Princípio Aberto-Fechado — Objetos ou entidades devem estar abertos para extensão, mas fechados para modificação, ou seja, quando novos comportamentos e recursos precisam ser adicionados no software, devemos estender e não alterar o código fonte original.
 Com a criação da interface IMusicalInstrumentRepository para assinatura de métodos para interação com BD caso venhamos a criar uma nova MusicalInstrumentBrinquedo, mesmo objetos desta classe não sendo instrumentos musicais de verdade a mesma pode utilizar os mesmos métodos de interação com o BD.
 ## 3. LSP— Liskov Substitution Principle:
@@ -56,3 +52,11 @@ Aplicamos o Design Pattern de Injeção de Dependência utilizando o framework A
 ## Implementação AutoFac
 
 ![image](assets/imagens/configuracao_autofac.png)
+
+## Separação da Camadas
+
+Implementamos uma divisão de pastas para cada contexto, seguindo orientações de alguns Padrões de Projeto. Separamos a camada da Controller e as camadas de Serviço e Repositório. Criamos uma camada de Domínio para armazenar os classes modelos que são usadas por outros serviços.
+
+![image](assets/imagens/pastas_solucao.png)
+
+A Classe MusicalInstrumentDAO, baseada no padrão de projeto Data Access Object, criada com intuito de regra para interação com o BD abstraindo qual vier a ser utilizado. Podemos criar uma interface com assinatura do método de conexão com BD e se caso viermos utilizar MySQL criamos uma classe que implementa a interface e assim criamos métodos específicos para conexão com este BD. Assim no nosso método de Initialize da classe MusicalInstrumentDAO podemos enviar um objeto do tipo da interface de conexão para na sequência realizarmos de forma HARD-CODE no código exemplos de instrumentos musicais. Se amanhã decidirmos utilizar outro BD (Oracle) basta criarmos uma nova classe implementando a interface de conexão não alterando nada nas demais interfaces e classes.
