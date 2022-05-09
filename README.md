@@ -1,7 +1,7 @@
 # Instrumentos Musicais
 API Rest de Loja de Instrumentos Musicais.
 
-## Projeto Software Engineering Development - Professor: Rafael Matsuyama
+# Projeto Software Engineering Development - Professor: Rafael Matsuyama
 Foi decidido pela maioria que o projeto seria desenvolvido em .NET, pois há mais programadores entre os integrantes do grupo que conhecem a plataforma da Microsoft.
 
 ## Integrantes
@@ -70,3 +70,17 @@ Implementamos uma divisão de pastas para cada contexto, seguindo orientações 
 ![image](assets/imagens/pastas_solucao.png)
 
 A Classe MusicalInstrumentDAO, baseada no padrão de projeto Data Access Object, criada com intuito de regra para interação com o BD abstraindo qual vier a ser utilizado. Podemos criar uma interface com assinatura do método de conexão com BD e se caso viermos utilizar MySQL criamos uma classe que implementa a interface e assim criamos métodos específicos para conexão com este BD. Assim no nosso método de Initialize da classe MusicalInstrumentDAO podemos enviar um objeto do tipo da interface de conexão para na sequência realizarmos de forma HARD-CODE no código exemplos de instrumentos musicais. Se amanhã decidirmos utilizar outro BD (Oracle) basta criarmos uma nova classe implementando a interface de conexão não alterando nada nas demais interfaces e classes.
+
+
+## Configuração 
+Caso for executar o projeto para teste e haja algum problema na execução da API localmente, o erro pode ser por conta da versão da lib do DotNetCompilerPlatform,
+que por padrão pode estar desatualizada no Visual Studio. Será preciso a atualização manual pelo Gerenciador do Nuget ou por linha de comando.
+https://stackoverflow.com/questions/32780315/could-not-find-a-part-of-the-path-bin-roslyn-csc-exe
+
+## Postman e Swagger
+
+Na pasta *assets/* há uma versão da Collection do Postman que fizemos para a execução dos testes caso preciso. Também é possível acessar o Swagger a partir do link
+da api local ("https://localhost:<port>/swagger").
+
+
+
