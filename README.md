@@ -1,7 +1,7 @@
 # Instrumentos Musicais
 API Rest de Loja de Instrumentos Musicais.
 
-# Projeto Software Engineering Development - Professor: Rafael Matsuyama
+## Projeto Software Engineering Development - Professor: Rafael Matsuyama
 Foi decidido pela maioria que o projeto seria desenvolvido em .NET, pois há mais programadores entre os integrantes do grupo que conhecem a plataforma da Microsoft.
 
 ## Integrantes
